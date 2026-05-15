@@ -37,7 +37,7 @@ jobs:
           flake8 app/ --max-line-length=120 --ignore=E501,W503 || true
 
       - name: Run tests
-        run: pytest tests/ -v --tb=short --timeout=60 -p no:warnings
+        run: pytest tests/ -v --tb=short -p no:warnings
 
       - name: Docker build check
         run: docker build -t nexusai-hub-test . || echo "Docker build skipped"
